@@ -28,7 +28,7 @@
       <!-- Item blog post -->
       <div
         class="flex flex-col space-y-12 divide-y divide-gray-200"
-        v-for="(item, index) in items"
+        v-for="(item, index) in filterBlog"
         :key="index"
       >
         <div>
@@ -80,7 +80,7 @@ const url = "http://localhost:1337/Blogs";
 export default {
   data() {
     return {
-      items: {},
+      items: [],
       search: ""
     };
   },
