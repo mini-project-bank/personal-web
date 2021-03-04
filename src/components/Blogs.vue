@@ -42,7 +42,7 @@
             class="mb-2 text-xl font-extrabold leading-snug tracking-tight text-gray-800 md:text-3xl"
           >
             <a href="#" class="text-gray-900 hover:text-purple-700">
-              <router-link :to="'/post/' + index">
+              <router-link :to="'/post/' + item.id">
                 {{ item.judul }}
               </router-link></a
             >
@@ -52,7 +52,7 @@
             <img
               v-bind:src="item.cover.url"
               class="object-cover w-full h-64 bg-center rounded-lg"
-              alt=""
+              :alt="item.cover.name"
             />
           </div>
           <!-- end image section -->
@@ -62,16 +62,6 @@
           <a href="#" class="btn btn-light btn-sm">Continue Reading</a>
         </div>
       </div>
-      <!-- <div
-        class="flex flex-col items-center justify-center pt-12 mt-12 space-x-0 space-y-2 border-t border-gray-200 md:space-x-2 md:space-y-0 md:flex-row"
-      >
-        <a href="#" class="w-full rounded-full btn btn-light btn-xl md:w-auto"
-          >Previous Page</a
-        >
-        <a href="#" class="w-full rounded-full btn btn-light btn-xl md:w-auto"
-          >Next Page</a
-        >
-      </div> -->
     </section>
   </div>
 </template>
@@ -99,7 +89,13 @@ export default {
       this.items = response.data;
     });
   },
-  computed: {}
+  computed: {
+    filterBlog: function() {
+      return this.items.filter(item => {
+        return item.judul.match(this.search);
+      });
+    }
+  }
 };
 </script>
 <style scoped>

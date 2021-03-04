@@ -12,6 +12,11 @@ const routes = [
     component: Home,
   },
   {
+    path: "/post/:id",
+    name: "Post",
+    component: Post,
+  },
+  {
     path: "/about",
     name: "About",
     // route level code-splitting
@@ -20,15 +25,11 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
-  {
-    path: "/post:index",
-    name: "Post",
-    component: Post,
-  },
 ];
 
 const router = new VueRouter({
   routes,
+  mode: "history",
 });
 
 export default router;

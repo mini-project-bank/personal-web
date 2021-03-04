@@ -19,12 +19,12 @@
         class="flex flex-wrap items-center justify-center text-base md:ml-auto "
       >
         <a
-          href="#"
+          href="/"
           class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800"
           >Blog</a
         >
         <a
-          href="#"
+          href=""
           class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800"
           >Work</a
         >
