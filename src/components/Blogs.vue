@@ -50,7 +50,7 @@
           <!-- Image section -->
           <div class="mb-5 text-left md:text-center">
             <img
-              v-bind:src="item.cover.url"
+              v-bind:src="base + item.cover.url"
               class="object-cover w-full h-64 bg-center rounded-lg"
               :alt="item.cover.name"
             />
@@ -81,7 +81,8 @@ export default {
   data() {
     return {
       items: [],
-      search: ""
+      search: "",
+      base: "http://localhost:1337"
     };
   },
   created() {
