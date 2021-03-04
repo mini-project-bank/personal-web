@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="article">
-      <article class="container px-4 py-24 mx-auto">
+      <article class="container px-4 py-10 mx-auto">
         <div class="w-full mx-auto mb-12 text-left md:w-3/4 lg:w-1/2">
           <img
             :src="base + items.cover.url"

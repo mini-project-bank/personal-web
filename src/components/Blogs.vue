@@ -33,7 +33,7 @@
       >
         <div>
           <p class="pt-5 mb-3 text-sm font-normal text-gray-500">
-            Publised
+            Published
             <span class="font-bold text-sm ml-1">
               {{ item.published_at | moment("dddd, MMMM Do YYYY") }}
             </span>
@@ -93,7 +93,7 @@ export default {
   computed: {
     filterBlog: function() {
       return this.items.filter(item => {
-        return item.judul.match(this.search);
+        return item.judul.toLowerCase().match(this.search);
       });
     }
   }
