@@ -1,0 +1,115 @@
+<template>
+  <div class="blogs">
+    <section class="container w-full px-4 py-10 mx-auto md:w-3/4 lg:w-2/4">
+      <!-- Searchbar -->
+      <div class="mb-5 text-left md:text-center">
+        <div class="form-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+          <input
+            v-model="search"
+            class="form-input"
+            placeholder="Search for posts..."
+          />
+        </div>
+      </div>
+      <!-- End Searchbar -->
+      <!-- Item blog post -->
+      <div
+        class="flex flex-col space-y-12 divide-y divide-gray-200"
+        v-for="(item, index) in items"
+        :key="index"
+      >
+        <div>
+          <p class="pt-5 mb-3 text-sm font-normal text-gray-500">
+            Publised
+            <span class="font-bold text-sm ml-1">
+              {{ item.published_at | moment("dddd, MMMM Do YYYY") }}
+            </span>
+          </p>
+          <h2
+            class="mb-2 text-xl font-extrabold leading-snug tracking-tight text-gray-800 md:text-3xl"
+          >
+            <a href="#" class="text-gray-900 hover:text-purple-700">
+              <router-link :to="'/post/' + index">
+                {{ item.judul }}
+              </router-link></a
+            >
+          </h2>
+          <!-- Image section -->
+          <div class="mb-5 text-left md:text-center">
+            <img
+              v-bind:src="item.cover.url"
+              class="object-cover w-full h-64 bg-center rounded-lg"
+              alt=""
+            />
+          </div>
+          <!-- end image section -->
+          <p class="mb-4 text-base font-normal text-gray-600 artikel">
+            {{ item.artikel }}
+          </p>
+          <a href="#" class="btn btn-light btn-sm">Continue Reading</a>
+        </div>
+      </div>
+      <!-- <div
+        class="flex flex-col items-center justify-center pt-12 mt-12 space-x-0 space-y-2 border-t border-gray-200 md:space-x-2 md:space-y-0 md:flex-row"
+      >
+        <a href="#" class="w-full rounded-full btn btn-light btn-xl md:w-auto"
+          >Previous Page</a
+        >
+        <a href="#" class="w-full rounded-full btn btn-light btn-xl md:w-auto"
+          >Next Page</a
+        >
+      </div> -->
+    </section>
+  </div>
+</template>
+<script>
+// Import AXIOS
+import Vue from "vue";
+import axios from "axios";
+import VueAxios from "vue-axios";
+Vue.use(VueAxios, axios);
+
+// momentjs
+Vue.use(require("vue-moment"));
+
+const url = "http://localhost:1337/Blogs";
+
+export default {
+  data() {
+    return {
+      items: {},
+      search: ""
+    };
+  },
+  created() {
+    axios.get(url).then(response => {
+      this.items = response.data;
+    });
+  },
+  computed: {}
+};
+</script>
+<style scoped>
+.artikel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 16px; /* fallback */
+  max-height: 50px; /* fallback */
+  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+</style>
