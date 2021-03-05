@@ -17,7 +17,7 @@
       <p class="text-gray-600 pb-4">
         This is my last commit activity on github.
       </p>
-      <img src="https://ghchart.rshah.org/228B22/fiqryq" />
+      <img class="w-full" src="https://ghchart.rshah.org/228B22/fiqryq" />
     </div>
     <!-- title -->
     <div class="title py-3">
@@ -28,10 +28,11 @@
         This is my popular public repository on my github.
       </p>
     </div>
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid grid-cols-2 gap-4 w-full px-2">
       <div>
         <a href="">
           <img
+            class="w-full"
             src="https://github-readme-stats.vercel.app/api/pin/?username=fiqryq&theme=dark&show_icons=true&repo=Pantaucovid-discord"
           />
         </a>
@@ -39,6 +40,7 @@
       <div>
         <a href="">
           <img
+            class="w-full"
             src="https://github-readme-stats.vercel.app/api/pin/?username=fiqryq&theme=dark&show_icons=true&repo=Pantaucovid-Dashboard"
           />
         </a>
@@ -46,6 +48,7 @@
       <div>
         <a href="">
           <img
+            class="w-full"
             src="https://github-readme-stats.vercel.app/api/pin/?username=fiqryq&theme=dark&show_icons=true&repo=Pantaucovid-android"
           />
         </a>
@@ -53,6 +56,7 @@
       <div>
         <a href="">
           <img
+            class="w-full"
             src="https://github-readme-stats.vercel.app/api/pin/?username=fiqryq&theme=dark&show_icons=true&repo=Nabung"
           />
         </a>
