@@ -71,26 +71,20 @@
 </template>
 <script>
 // Import AXIOS
-import Vue from "vue";
 import axios from "axios";
-import VueAxios from "vue-axios";
-Vue.use(VueAxios, axios);
-
-// momentjs
-Vue.use(require("vue-moment"));
-
-const url = "http://localhost:1337/Blogs";
+// config
+import config from "../utils/config";
 
 export default {
   data() {
     return {
       items: [],
       search: "",
-      base: "http://localhost:1337"
+      base: `${config.baseUrl}`
     };
   },
   created() {
-    axios.get(url).then(response => {
+    axios.get(`${config.baseUrl}/Blogs`).then(response => {
       this.items = response.data;
     });
   },

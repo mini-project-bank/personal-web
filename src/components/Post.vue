@@ -43,14 +43,9 @@
 
 <script>
 // Import AXIOS
-import Vue from "vue";
 import axios from "axios";
-import VueAxios from "vue-axios";
-import VueSimpleMarkdown from "vue-simple-markdown";
-import "vue-simple-markdown/dist/vue-simple-markdown.css";
-
-Vue.use(VueAxios, axios);
-Vue.use(VueSimpleMarkdown);
+// config
+import config from "../utils/config";
 
 export default {
   data() {
@@ -58,12 +53,12 @@ export default {
       id: this.$route.params.id,
       items: [],
       label: [],
-      base: "http://localhost:1337"
+      base: `${config.baseUrl}`
     };
   },
   mounted() {
     axios
-      .get("http://localhost:1337/Blogs/" + this.id)
+      .get(`${config.baseUrl}/Blogs/` + this.id)
       .then(response => {
         this.items = response.data;
         this.label = response.data.kategori;

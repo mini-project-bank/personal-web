@@ -10,6 +10,11 @@ import VueHighlightJS from "vue-highlightjs";
 // Tell Vue.js to use vue-highlightjs
 Vue.use(VueHighlightJS);
 
+import VueSimpleMarkdown from "vue-simple-markdown";
+import "vue-simple-markdown/dist/vue-simple-markdown.css";
+
+Vue.use(VueSimpleMarkdown);
+
 Vue.config.productionTip = false;
 
 new Vue({
