@@ -2,6 +2,8 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Post from "../views/Post.vue";
+import Dashboard from "../views/Dashboard.vue";
+import Work from "../views/Work.vue";
 
 Vue.use(VueRouter);
 
@@ -15,6 +17,16 @@ const routes = [
     path: "/post/:id",
     name: "Post",
     component: Post,
+  },
+  {
+    path: "/dashboard",
+    name: "Dashboard",
+    component: Dashboard,
+  },
+  {
+    path: "/work",
+    name: "Work",
+    component: Work,
   },
   {
     path: "/about",

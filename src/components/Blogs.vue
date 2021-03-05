@@ -1,6 +1,6 @@
 <template>
   <div class="blogs">
-    <section class="container w-full px-4 py-10 mx-auto md:w-3/4 lg:w-2/4">
+    <section class="container w-full px-4 py-4 mx-auto md:w-3/4 lg:w-2/4">
       <!-- Searchbar -->
       <div class="mb-5 text-left md:text-center">
         <div class="form-icon">
@@ -38,15 +38,15 @@
               {{ item.published_at | moment("dddd, MMMM Do YYYY") }}
             </span>
           </p>
-          <h2
+          <h1
             class="mb-2 text-xl font-extrabold leading-snug tracking-tight text-gray-800 md:text-3xl"
           >
-            <a href="#" class="text-gray-900 hover:text-purple-700">
+            <a href="#" class="text-black">
               <router-link :to="'/post/' + item.id">
                 {{ item.judul }}
               </router-link></a
             >
-          </h2>
+          </h1>
           <!-- Image section -->
           <div class="mb-5 text-left md:text-center">
             <img
@@ -59,11 +59,11 @@
           <p class="mb-4 text-base font-normal text-gray-600 artikel">
             {{ item.artikel }}
           </p>
-          <a class="btn btn-light btn-sm">
-            <router-link :to="'/post/' + item.id">
+          <router-link :to="'/post/' + item.id">
+            <a class="btn btn-light btn-sm">
               Continue Reading
-            </router-link></a
-          >
+            </a>
+          </router-link>
         </div>
       </div>
     </section>
