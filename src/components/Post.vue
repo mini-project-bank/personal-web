@@ -2,11 +2,11 @@
   <div>
     <div class="article">
       <article class="container px-4 py-10 mx-auto">
-        <div class="w-full mx-auto mb-12 text-left md:w-3/4 lg:w-1/2">
+        <div class="w-full mx-auto mb-5 text-left md:w-3/4 lg:w-1/2">
           <img
-            :src="base + items.cover.url"
+            v-bind:src="base + items.cover.url"
             class="object-cover w-full h-64 bg-center rounded-lg"
-            :alt="items.name"
+            v-bind:alt="items.name"
           />
           <p
             class="mt-6 mb-2 text-xs font-semibold tracking-wider uppercase text-primary"
@@ -32,11 +32,9 @@
             >
           </div>
         </div>
-
         <div class="w-full mx-auto prose md:w-3/4 lg:w-1/2">
-          <p>
-            {{ items.artikel }}
-          </p>
+          <!-- Artikel List using markdown -->
+          <vue-simple-markdown :source="items.artikel"> </vue-simple-markdown>
         </div>
       </article>
     </div>
@@ -48,13 +46,17 @@
 import Vue from "vue";
 import axios from "axios";
 import VueAxios from "vue-axios";
+import VueSimpleMarkdown from "vue-simple-markdown";
+import "vue-simple-markdown/dist/vue-simple-markdown.css";
+
 Vue.use(VueAxios, axios);
+Vue.use(VueSimpleMarkdown);
 
 export default {
   data() {
     return {
       id: this.$route.params.id,
-      items: {},
+      items: [],
       label: [],
       base: "http://localhost:1337"
     };

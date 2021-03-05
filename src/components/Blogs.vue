@@ -59,7 +59,11 @@
           <p class="mb-4 text-base font-normal text-gray-600 artikel">
             {{ item.artikel }}
           </p>
-          <a href="#" class="btn btn-light btn-sm">Continue Reading</a>
+          <a class="btn btn-light btn-sm">
+            <router-link :to="'/post/' + item.id">
+              Continue Reading
+            </router-link></a
+          >
         </div>
       </div>
     </section>
