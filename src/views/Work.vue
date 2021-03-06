@@ -1,13 +1,12 @@
 <template>
-  <div class="container px-2 py-12 mx-auto md:w-3/4 lg:w-2/4">
+  <div class="container px-5 py-12 mx-auto md:w-3/4 lg:w-2/4">
     <!-- title -->
     <div class="title">
       <h1 class="text-4xl font-extrabold leading-snug tracking-tight">
         My work
       </h1>
       <p class="text-gray-600 ">
-        This is my personal dashboard, built with Vuejs. I use this dashboard to
-        track various metrics across platforms.
+        List of my latest project and my work.
       </p>
     </div>
     <!-- Content -->
@@ -17,28 +16,21 @@
       >
         <div class="h-8 w-8 ml-2 mr-4">
           <span class="sr-only"></span
-          ><svg
+          ><img
             class="h-8 w-8 min-w-sm text-gray-900 dark:text-gray-100"
-            viewBox="0 0 267 305"
-          >
-            <g fill="currentColor">
-              <path
-                d="M0 296V8.5H231.5V89L170.5 150L258.5 238H174L86 150L170.5 65.5H58V238L0 296Z"
-              ></path>
-            </g>
-          </svg>
+            src="../assets/suncode.svg"
+          />
         </div>
-        <div>
+        <a href="">
           <h4
             class="text-lg font-bold tracking-tight text-gray-900 dark:text-gray-100"
           >
             Suncode
           </h4>
           <p class="leading-5 text-gray-700 dark:text-gray-300">
-            Build and deploy a modern Jamstack application using the most
-            popular open-source software.
+            Build my own startup.
           </p>
-        </div>
+        </a>
       </div>
     </div>
   </div>

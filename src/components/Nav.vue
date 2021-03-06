@@ -1,5 +1,5 @@
 <template>
-  <div class="text-gray-700 bg-white body-font">
+  <div class="text-gray-700 bg-white body-font ">
     <div
       class="flex flex-col flex-wrap py-5 mx-auto md:items-center md:flex-row md:w-3/4 lg:w-2/4"
     >
@@ -16,7 +16,7 @@
         </div>
       </a> -->
       <nav
-        class="flex flex-wrap items-center justify-center text-base md:ml-auto position: sticky;"
+        class="flex flex-wrap items-center justify-center text-base md:ml-auto "
       >
         <router-link to="/">
           <a

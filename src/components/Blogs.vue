@@ -1,6 +1,6 @@
 <template>
   <div class="blogs">
-    <section class="container w-full px-4 py-4 mx-auto md:w-3/4 lg:w-2/4">
+    <section class="container w-full px-5 py-4 mx-auto md:w-3/4 lg:w-2/4">
       <!-- Searchbar -->
       <div class="mb-5 text-left md:text-center">
         <div class="form-icon">
@@ -41,7 +41,7 @@
           <h1
             class="mb-2 text-xl font-extrabold leading-snug tracking-tight text-gray-800 md:text-3xl"
           >
-            <a href="#" class="text-black">
+            <a href="#" class="text-black hover:text-gray-800">
               <router-link :to="'/post/' + item.id">
                 {{ item.judul }}
               </router-link></a
@@ -51,7 +51,7 @@
           <div class="mb-5 text-left md:text-center">
             <img
               v-bind:src="base + item.cover.url"
-              class="object-cover w-full h-64 bg-center rounded-lg"
+              class="object-cover w-full h-80 bg-center rounded-lg"
               :alt="item.cover.name"
             />
           </div>
